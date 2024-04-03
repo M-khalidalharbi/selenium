@@ -1,6 +1,7 @@
 package webelement;
 
 
+import com.google.errorprone.annotations.Var;
 import  org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -50,11 +51,20 @@ public class TestClassStructured {
         // writing text
         By textInput = By.id("my-text-id");
         driver.findElement(textInput).sendKeys("Selenium is Great!");
+        var Testarea= driver.findElement(By.name("my-textarea"));
+        driver.findElement(By.name("my-textarea")).sendKeys("dgdggg");
 
         // reading text
         By pageHeader = By.tagName("h1");
         var textValue = driver.findElement(pageHeader).getText();
         Assertions.assertEquals("Web form", textValue);
+    }
+    @Test
+    public void webelelemnt() {
+        var Testarea= driver.findElement(By.name("my-textarea"));
+        driver.findElement(By.name("my-textarea")).sendKeys("dgdggg");
+
+
     }
 
     @BeforeEach
@@ -70,6 +80,6 @@ public class TestClassStructured {
     @AfterEach
     public void afterEach(){
         //terminating the session
-        driver.quit();
+
     }
 }
